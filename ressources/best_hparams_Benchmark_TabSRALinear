@@ -1,0 +1,24 @@
+#### Churn dataset
+        best_p = {'seed': 42, 'lr': 0.006835471440855879, 'dropout_rate': 0.2, 'dim_head': 8, 'epochs': 900, 'weight_decay': 0.00038918784304332334, 'batch_size': 512}
+
+#### CreditDefault dataset
+        best_p = {'seed': 42, 'lr': 0.0022367768030575686, 'dropout_rate': 0.3, 'dim_head': 8, 'epochs': 300, 'weight_decay': 0.00042138470566169115, 'batch_size': 768}
+
+#### BankMarketing dataset 
+	best_p = {'seed': 42, 'lr': 0.00044044635904066216, 'dropout_rate': 0.5, 'dim_head': 8, 'epochs': 700, 'weight_decay': 0.0003123993650133216, 'batch_size': 1280}
+
+#### AdultIncome dataset 
+        best_p = {'seed': 42, 'lr': 0.00030308789218210625, 'dropout_rate': 0.3, 'dim_head': 8, 'epochs': 400, 'weight_decay': 0.0006111962202244955, 'batch_size': 1536}
+
+#### TelChurnBig dataset 
+	best_p = {'seed': 42, 'lr': 0.0050200404382163685, 'dropout_rate': 0.4, 'dim_head': 12, 'epochs': 900, 'weight_decay': 9.732745567881411e-05, 'batch_size': 1792}
+
+#### HelocFico dataset 
+	best_p = {'seed': 42, 'lr': 0.007088794143401869, 'dropout_rate': 0.4, 'dim_head': 12, 'epochs': 500, 'weight_decay': 0.0008406966545365837, 'batch_size': 1280}
+	
+#### Blastchar dataset
+	best_p = {'seed': 42, 'lr': 0.006563558226128283, 'dropout_rate': 0.1, 'dim_head': 4, 'epochs': 100, 'weight_decay': 0.0005861092803567032, 'batch_size': 1536}
+	
+#### CreditCardFraud dataset
+	best_p = {'seed': 42, 'lr': 0.0006750277604651748, 'dropout_rate': 0.5, 'dim_head': 12, 'epochs': 800, 'weight_decay': 2.1563909801506647e-05, 'batch_size': 2048}
+
