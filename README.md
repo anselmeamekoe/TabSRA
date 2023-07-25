@@ -104,19 +104,35 @@ Model parameters
 ### Todo 
 TabSRA package with sklearn interface
 ### Acknowledgments
-This work has been done in collaboration between BPCE Group, Laboratoire d'Informatique de Paris Nord (LIPN),  DAVID Lab UVSQ and was supported by the program Convention
+This work has been done in collaboration between BPCE Group, Laboratoire d'Informatique de Paris Nord (LIPN UMR 7030),  DAVID Lab UVSQ-Université Paris Saclay and was supported by the program Convention
 Industrielle de Formation par la Recherche (CIFRE) of the Association Nationale de la Recherche et de la Technologie (ANRT).
 ### Citations
-  If you find the code useful, please cite:
+  If you find the code useful, please cite it by using the following BibTeX entry:
   ```
-  Kodjo Mawuena Amekoe, Mohamed Djallel Dilmi, Hanene Azzag, Zaineb Chelly Dagdia, Mustapha Lebbah et Gregoire Jaffre. TabSRA : An Attention based Self-Explainable Model for Tabular Learning. In The 31th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning (ESANN), 2023.
+@inproceedings{kodjoEs23,
+ author       = {Kodjo Mawuena Amekoe and
+                  Mohamed Djallel Dilmi and
+                  Hanene Azzag and
+                  Zaineb Chelly Dagdia and
+                    Mustapha Lebbah and
+                  Gregoire Jaffre},
+  title = {TabSRA: An Attention based Self-Explainable Model for Tabular Learning},
+ booktitle = {The31th European Symposium on Artificial Neural Networks, Computational  Intelligence and Machine Learning (ESANN)},
+  year         = {2023}
+ }
   ```
   ```
-  Kodjo Mawuena Amekoe, Hanane Azzag, Mustapha Lebbah, Zaineb CHELLY DAGDIA, Grégoire Jaffre. A New Class of Intelligible Models for Tabular Learning. In The 5th International Workshop on eXplainable Knowledge Discovery in Data Mining (PKDD), 2023.
+@inproceedings{XKDD23,
+ author       = {Kodjo Mawuena Amekoe and
+                  Hanene Azzag and
+                    Mustapha Lebbah and
+                  Zaineb Chelly Dagdia and
+                  Gregoire Jaffre},
+  title = {A New Class of Intelligible Models for Tabular Learning},
+ booktitle = {In The 5th International Workshop on eXplainable Knowledge Discovery in Data Mining (PKDD)-ECML-PKDD},
+  year         = {2023}
+ }
   ```
   ```
-  Kodjo Mawuena Amekoe, Mohamed Djallel Dilmi, Hanene Azzag, Mustapha Lebbah, Zaineb Chelly Dagdia, Gregoire Jaffre. Self-Reinforcement Attention Mechanism For Tabular Learning. 
   https://arxiv.org/abs/2305.11684
   ```
-  
-  
