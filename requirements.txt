@@ -1,0 +1,8 @@
+numpy>=1.21.0
+pandas>=1.4.2
+scikit_learn>=1.2.2
+torch>=1.12.1
+skorch>=0.15.0
+interpret>=0.4.4
+xgboost>=1.5.0
+shap>=0.41.0
