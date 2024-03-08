@@ -10,7 +10,7 @@ In short, TabSRA contains a Self-Reinforcement Attention (SRA) block that is use
 First, clone the TabSRA repository, and install the requirements:
 ```bash
 $ https://github.com/anselmeamekoe/TabSRA
-$ cd TabSRA
+$ cd TabSRA/ESANN_XKDD
 ```
   The main dependencies are:
   - python>=3.9.12
