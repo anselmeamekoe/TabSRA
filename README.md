@@ -9,8 +9,7 @@ solutions and explaining full-complexity models. This study includes, *TabSRAs*,
 human knowledge during the training phase.
 
 ## What is the actual performance gap between the full-complexity state-of-the-art models and their inherently interpretable counterpartsin terms of accuracy?
-| Model            | Rank (min)|   Rank (max)      |   Rank (mean)    | Rank (median)|Test score(mean)|Test score(median)|Test score(std)|Runing Time(mean)|Runing Time(meadian)|
-|------------------|:-----|-----|--------|--------|-------|--------|-------|---------|----------|
+| Model            | Rank (min)|   Rank (max)      |   Rank (mean)    | Rank (median)|Test score (mean)|Test score (median)|Test score (std)|Runing Time (mean)|Runing Time (meadian)|
 |                  | min | max | mean   | median | mean  | median | std   | mean    | median |
 | DT               | 2   | 11  | 9.480  | 10     | 0.870 | 0.916  | 0.163 | 0.294   | 0.032  |
 | EBM              | 1   | 9   | 4.578  | 4      | 0.961 | 0.985  | 0.067 | 97.837  | 19.737|
