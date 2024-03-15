@@ -25,7 +25,7 @@ human knowledge during the training phase.
 | ResNet           | 1   | 11  | 6.251  | 7      | 0.911 | 0.976  | 0.195 | 95.123  | 53.212 |
 | SAINT            | 1   | 11  | 4.776  | 5      | 0.949 | 0.985  | 0.093 | 216.053 | 126.841 |
 | FT Transformer   | 1   | 10  | 4.382  | 4      | 0.946 | 0.988  | 0.109 | 126.589 | 77.465  |
-| RandomForest     | 1   | 9   | 3.501  | 3      | 0.987 | 0.994  | 0.019 | 39.030  | 8.252   |
+| Random Forest     | 1   | 9   | 3.501  | 3      | 0.987 | 0.994  | 0.019 | 39.030  | 8.252   |
 | XGBoost          | 1   | 10  | 2.171  | 1      | 0.990 | 1.000  | 0.028 | 18.254  | 12.561  |
 
 
@@ -39,6 +39,13 @@ The considered inherently interpretable models are:
 - Linear/Logistic Regression (LR): pytorch is used for the implementation
 - TabSRALinear: an instantiation of TabSRAs, which imitates the formulation of classical Linear models. More details or in the papers [ESANN](https://www.esann.org/sites/default/files/proceedings/2023/ES2023-37.pdf), [ECML@XKDD](http://xkdd2023.isti.cnr.it/papers/426.pdf)
   
+Among full-complexty models, we considered:
+- MultiLayer Perceptron (MLP): pytorch is used for the implementation
+- [ResNet](https://arxiv.org/pdf/2106.11959.pdf)
+- [SAINT](https://arxiv.org/pdf/2106.01342.pdf)
+- [FT Transformer](https://arxiv.org/pdf/2106.11959.pdf)
+- [Random Forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
+- [XGBoost](https://xgboost.readthedocs.io/en/stable/)
 TabSRA is a class of accurate tabular learning models with inherent intelligibility published at the 5th International Workshop on eXplainable Knowledge Discovery in Data Mining **XKDD 2023** and The 31th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning **ESANN 2023**.
 In short, TabSRA contains a Self-Reinforcement Attention (SRA) block that is used to learn a *Reinforced* representation of the raw input through element-wise multiplication with the produced attention vector. The learned representation is aggregated by a highly transparent function (e.g., linear) that produces the final output. In this repository we propose the implementation of TabSRA with a linear aggregator namely **TabSRALinear**.
 
