@@ -3,9 +3,13 @@
  - uncovering hidden patterns in the data
  - providing meaningful justification of decisions made by machine learning mode
  - ...
+ - 
  In this concern, an important question arises: should one use *inherently interpretable* models or explain full-complexity models such as XGBoost, Random Forest with post hoc tools?
+
 In this repository, we provide some concrete numerical results that can guide practitioners (or researchers) in their choice between using inherently interpretable
-solutions and explaining full-complexity models. This study includes, *TabSRAs*, an attention based inherently interpretable model which is proving to be a viable option for (i) generating stable or robust explanations, and (ii) incorporating
+solutions and explaining full-complexity models. 
+
+This study includes, *TabSRAs*, an attention based inherently interpretable model which is proving to be a viable option for (i) generating stable or robust explanations, and (ii) incorporating
 human knowledge during the training phase.
 
 ## What is the actual performance gap between the full-complexity state-of-the-art models and their inherently interpretable counterpartsin terms of accuracy?
