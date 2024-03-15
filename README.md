@@ -3,7 +3,7 @@
  - uncovering hidden patterns in the data
  - providing meaningful justification of decisions made by machine learning mode
  - ...
- - 
+   
  In this concern, an important question arises: should one use *inherently interpretable* models or explain full-complexity models such as XGBoost, Random Forest with post hoc tools?
 
 In this repository, we provide some concrete numerical results that can guide practitioners (or researchers) in their choice between using inherently interpretable
@@ -27,6 +27,9 @@ human knowledge during the training phase.
 | FT Transformer   | 1   | 10  | 4.382  | 4      | 0.946 | 0.988  | 0.109 | 126.589 | 77.465  |
 | RandomForest     | 1   | 9   | 3.501  | 3      | 0.987 | 0.994  | 0.019 | 39.030  | 8.252   |
 | XGBoost          | 1   | 10  | 2.171  | 1      | 0.990 | 1.000  | 0.028 | 18.254  | 12.561  |
+Predictive performance of models across a benchmark of 45 datasets (59 tasks) introduced in the paper "Why do tree-based models still outperform deep learning on typical tabular data?". We report the rank over all tasks, the relative test score (Accuracy/$R^2$) and running time (training+inference) in seconds.
+The considered inherently interpretable models are:
+- Decision Trees [(DT)](https://scikit-learn.org/stable/modules/tree.html)
 
 TabSRA is a class of accurate tabular learning models with inherent intelligibility published at the 5th International Workshop on eXplainable Knowledge Discovery in Data Mining **XKDD 2023** and The 31th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning **ESANN 2023**.
 In short, TabSRA contains a Self-Reinforcement Attention (SRA) block that is used to learn a *Reinforced* representation of the raw input through element-wise multiplication with the produced attention vector. The learned representation is aggregated by a highly transparent function (e.g., linear) that produces the final output. In this repository we propose the implementation of TabSRA with a linear aggregator namely **TabSRALinear**.
