@@ -10,6 +10,7 @@ human knowledge during the training phase.
 
 ## What is the actual performance gap between the full-complexity state-of-the-art models and their inherently interpretable counterpartsin terms of accuracy?
 | Model            | Rank (min)|   Rank (max)      |   Rank (mean)    | Rank (median)|Test score (mean)|Test score (median)|Test score (std)|Runing Time (mean)|Runing Time (meadian)|
+|------------------|-----|-----|--------|--------|-------|--------|-------|---------|----------|
 | DT               | 2   | 11  | 9.480  | 10     | 0.870 | 0.916  | 0.163 | 0.294   | 0.032  |
 | EBM              | 1   | 9   | 4.578  | 4      | 0.961 | 0.985  | 0.067 | 97.837  | 19.737|
 | EBM_S            | 1   | 10  | 6.751  | 7      | 0.933 | 0.958  | 0.086 | 23.997  | 5.144 |
