@@ -27,6 +27,8 @@ human knowledge during the training phase.
 | FT Transformer   | 1   | 10  | 4.382  | 4      | 0.946 | 0.988  | 0.109 | 126.589 | 77.465  |
 | RandomForest     | 1   | 9   | 3.501  | 3      | 0.987 | 0.994  | 0.019 | 39.030  | 8.252   |
 | XGBoost          | 1   | 10  | 2.171  | 1      | 0.990 | 1.000  | 0.028 | 18.254  | 12.561  |
+
+
 Predictive performance of models across a benchmark of 45 datasets (59 tasks) introduced in the paper "Why do tree-based models still outperform deep learning on typical tabular data?". We report the rank over all tasks, the relative test score (Accuracy/$R^2$) and running time (training+inference) in seconds.
 The considered inherently interpretable models are:
 - Decision Trees [(DT)](https://scikit-learn.org/stable/modules/tree.html)
