@@ -1,5 +1,15 @@
-# TabSRA: An Attention based Self-Explainable Model for Tabular Learning
+# Exploring Accuracy and Interpretability trade-off in Tabular Learning with Novel Attention-Based Models
+ Apart from the predictive performance, interpretability is essential for :
+ - uncovering hidden patterns in the data
+ - providing meaningful justification of decisions made by machine learning mode
+ - ...
+ In this concern, an important question arises: should one use *inherently interpretable* models or explain full-complexity models such as XGBoost, Random Forest with post hoc tools?
+In this repository, we provide some concrete numerical results that can guide practitioners (or researchers) in their choice between using inherently interpretable
+solutions and explaining full-complexity models. This study includes, *TabSRAs*, an attention based inherently interpretable model which is proving to be a viable option for (i) generating stable or robust explanations, and (ii) incorporating
+human knowledge during the training phase.
 
+## What is the actual performance gap between the full-complexity state-of-the-art models and their inherently interpretable counterpartsin terms of accuracy?
+    
 TabSRA is a class of accurate tabular learning models with inherent intelligibility published at the 5th International Workshop on eXplainable Knowledge Discovery in Data Mining **XKDD 2023** and The 31th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning **ESANN 2023**.
 In short, TabSRA contains a Self-Reinforcement Attention (SRA) block that is used to learn a *Reinforced* representation of the raw input through element-wise multiplication with the produced attention vector. The learned representation is aggregated by a highly transparent function (e.g., linear) that produces the final output. In this repository we propose the implementation of TabSRA with a linear aggregator namely **TabSRALinear**.
 
