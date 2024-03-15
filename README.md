@@ -9,6 +9,31 @@ solutions and explaining full-complexity models. This study includes, *TabSRAs*,
 human knowledge during the training phase.
 
 ## What is the actual performance gap between the full-complexity state-of-the-art models and their inherently interpretable counterpartsin terms of accuracy?
+\begin{table}[h]
+    %\centering
+\caption{Predictive performance of models across 59 tasks (45 datasets). We report the rank over all tasks, the relative test score (Accuracy/$R^2$) and running time (training+inference) in seconds.}\label{tab:performance}  
+\begin{tabular}{lrrrrrrrrr}
+\toprule
+   Model & \multicolumn{4}{@{}c@{}@{}}{Rank} & \multicolumn{3}{@{}c@{}}{Mean Test Score} & \multicolumn{2}{l}{Mean Runing Time \footnotemark} 
+   \\
+               &  min & max &   mean & median &            mean & median &   std &      mean &  median \\
+\midrule
+  DT &    2 &  11 &  9.480 &     10 &           0.870 &  0.916 & 0.163 &     0.294 &   0.032 \\
+           EBM &    1 &   9 &  4.578 &      4 &           0.961 &  0.985 & 0.067 &    97.837 &  19.737 \\
+         EBM\_S &    1 &  10 &  6.751 &      7 &           0.933 &  0.958 & 0.086 &    23.997 &   5.144 \\
+        LR &    6 &  11 & 10.703 &     11 &           0.761 &  0.840 & 0.232 &    21.124 &  19.716 \\
+        TabSRALinear &    1 &  11 &  7.289 &      8 &           0.903 &  0.973 & 0.197 &    47.576 &  38.073 \\
+        \hline
+           MLP &    1 &  11 &  6.119 &      7 &           0.926 &  0.978 & 0.159 &    24.165 &  19.256 \\
+        ResNet &    1 &  11 &  6.251 &      7 &           0.911 &  0.976 & 0.195 &    95.123 &  53.212 \\
+         SAINT &    1 &  11 &  4.776 &      5 &           0.949 &  0.985 & 0.093 &   216.053 & 126.841 \\
+FT Transformer &    1 &  10 &  4.382 &      4 &           0.946 &  0.988 & 0.109 &   126.589 &  77.465 \\
+  RandomForest &    1 &   9 &  3.501 &      3 &           0.987 &  0.994 & 0.019 &    39.030 &   8.252 \\
+       XGBoost &    1 &  10 &  2.171 &      1 &           0.990 &  1.000 & 0.028 &    18.254 &  12.561 \\
+\bottomrule
+\end{tabular}
+\footnotetext[2]{For full-complexity models, optimization results are taken from \cite{treebasedbetter} where GPUs are used for NNs models. For TabSRALinear and LR we only use CPUs therefore their running time can be reduced when considering GPUs.}
+\end{table}
     
 TabSRA is a class of accurate tabular learning models with inherent intelligibility published at the 5th International Workshop on eXplainable Knowledge Discovery in Data Mining **XKDD 2023** and The 31th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning **ESANN 2023**.
 In short, TabSRA contains a Self-Reinforcement Attention (SRA) block that is used to learn a *Reinforced* representation of the raw input through element-wise multiplication with the produced attention vector. The learned representation is aggregated by a highly transparent function (e.g., linear) that produces the final output. In this repository we propose the implementation of TabSRA with a linear aggregator namely **TabSRALinear**.
