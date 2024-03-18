@@ -47,11 +47,14 @@ Among full-complexty models, we considered:
 - [Random Forest](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html)
 - [XGBoost](https://xgboost.readthedocs.io/en/stable/)
 
+### What about the robustness of explanations, are the produced feature attributions similar for similar inputs?
+<img src="https://github.com/anselmeamekoe/TabSRA/blob/main/ESANN_XKDD/ressources/images/TabSRAs.svg" width=600px>
+Changes in feature attributions (the lower the better) using the [Credit Card Fraud dataset]()  . LR = Logistic Regression, SRA=TabSRALinear, XGB_SHAP=XGBoost+TreeSHAP
+
 <img src="https://github.com/anselmeamekoe/TabSRA/blob/main/ressources/Stability_CardFraud_Split0_hideen1_1E_3.png" width=600px>
 TabSRA is a class of accurate tabular learning models with inherent intelligibility published at the 5th International Workshop on eXplainable Knowledge Discovery in Data Mining **XKDD 2023** and The 31th European Symposium on Artificial Neural Networks, Computational Intelligence and Machine Learning **ESANN 2023**.
 In short, TabSRA contains a Self-Reinforcement Attention (SRA) block that is used to learn a *Reinforced* representation of the raw input through element-wise multiplication with the produced attention vector. The learned representation is aggregated by a highly transparent function (e.g., linear) that produces the final output. In this repository we propose the implementation of TabSRA with a linear aggregator namely **TabSRALinear**.
 
-<img src="https://github.com/anselmeamekoe/TabSRA/blob/main/ESANN_XKDD/ressources/images/TabSRAs.svg" width=600px>
 
 ## Usage
 ### Prerequisites
