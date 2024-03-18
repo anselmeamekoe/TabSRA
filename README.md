@@ -49,14 +49,12 @@ Among full-complexty models, we considered:
 
 ### What about the robustness of explanations, are the produced feature attributions similar for similar inputs?
 <img src="https://github.com/anselmeamekoe/TabSRA/blob/main/ressources/Stability_CardFraud_Split0_hideen1_1E_3.png" width=600px>
-Changes in feature attributions (the lower the better) using the [Credit Card Fraud dataset](https://www.kaggle.com/mlg-ulb/creditcardfraud). LR = Logistic Regression, SRA=TabSRALinear, XGB_SHAP=XGBoost+TreeSHAP
-
-
+Changes in feature attributions (the lower the better) using the [CreditCardFraud](https://www.kaggle.com/mlg-ulb/creditcardfraud) dataset. LR = Logistic Regression, SRA=TabSRALinear, XGB_SHAP=XGBoost+TreeSHAP
 
 
 ## Usage
 ### Prerequisites
-First, clone the TabSRA repository, and install the requirements:
+First, clone the TabSRA repository, create a new python environment and install the requirements:
 ```bash
 $ https://github.com/anselmeamekoe/TabSRA
 $ cd TabSRA
