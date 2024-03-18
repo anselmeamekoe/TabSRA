@@ -54,7 +54,11 @@ Changes in feature attributions (the lower the better) using the [CreditCardFrau
 
 ## Usage
 ### Prerequisites
-Create a new python environment, install the [requirements]
+Create a new python environment, install the [requirements](https://github.com/anselmeamekoe/TabSRA/blob/main/requirements.txt)
+### Replicating the analyses/results on the predictive performance
+1. Clone this repository of your machine
+2. dowanload the random search results 
+
 ```bash
 $ https://github.com/anselmeamekoe/TabSRA
 $ cd TabSRA
