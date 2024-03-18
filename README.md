@@ -54,7 +54,7 @@ Changes in feature attributions (the lower the better) using the [CreditCardFrau
 
 ## Usage
 ### Prerequisites
-First, clone the TabSRA repository, create a new python environment and install the requirements:
+Create a new python environment, install the [requirements]
 ```bash
 $ https://github.com/anselmeamekoe/TabSRA
 $ cd TabSRA
