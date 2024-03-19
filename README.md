@@ -58,10 +58,15 @@ Create a new python environment, install the [requirements](https://github.com/a
 ### Replicating the analyses/results on the predictive performance
 1. Clone this repository of your machine
 2. Dowanload the random search results using the links:
-   - https://figshare.com/ndownloader/files/40081681 for the full-complexity models
-   - https://drive.google.com/file/d/1sNmzjmzQg4ym7g62ZOi699QjVqE20W6H/view?usp=sharing for inherently interpretable models
-3.  Dopy and paste the downloaded files to ```TabSRA/tabular-benchmark/analyses/```
-4.  Run the Notebook for reproducing results
+   - [full-complexity models](https://figshare.com/ndownloader/files/40081681)
+   - [inherently interpretable models](https://drive.google.com/file/d/1sNmzjmzQg4ym7g62ZOi699QjVqE20W6H/view?usp=sharing)
+3.  Copy and paste the downloaded files to ```TabSRA/tabular-benchmark/analyses/```
+4.  Run the [Notebook](https://github.com/anselmeamekoe/TabSRA/blob/main/tabular-benchmark/analyses/results.ipynb) for reproducing results
+   
+NB: To use the notebook, you will need to install it in the python environment you have created using pip for example:
+```bash
+$ pip install jupyter
+```
 
 ```bash
 $ https://github.com/anselmeamekoe/TabSRA
