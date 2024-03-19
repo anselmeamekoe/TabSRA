@@ -57,7 +57,11 @@ Changes in feature attributions (the lower the better) using the [CreditCardFrau
 Create a new python environment, install the [requirements](https://github.com/anselmeamekoe/TabSRA/blob/main/requirements.txt)
 ### Replicating the analyses/results on the predictive performance
 1. Clone this repository of your machine
-2. dowanload the random search results 
+2. Dowanload the random search results using the links:
+   - https://figshare.com/ndownloader/files/40081681 for the full-complexity models
+   - https://drive.google.com/file/d/1sNmzjmzQg4ym7g62ZOi699QjVqE20W6H/view?usp=sharing for inherently interpretable models
+3.  Dopy and paste the downloaded files to ```TabSRA/tabular-benchmark/analyses/```
+4.  Run the Notebook for reproducing results
 
 ```bash
 $ https://github.com/anselmeamekoe/TabSRA
