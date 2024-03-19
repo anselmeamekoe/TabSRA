@@ -79,103 +79,74 @@ NB: To use the notebook, you will need to install it in the python environment y
 2. [Credit Default modeling with a group of correlated features](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/Application2_TaiwanCreditDefault.ipynb)
    
 ### Usage of TabSRALinear
-We use the [skorch](https://skorch.readthedocs.io/en/stable/) framework to make our implementation more scikit-learn friendly
-
-```bash
-$ https://github.com/anselmeamekoe/TabSRA
-$ cd TabSRA
-```
-  The main dependencies are:
-  - python>=3.9.12
-  - torch>=1.12.1
-  - einops>=0.4.1
-  - numpy>=1.21.5
-  - pandas>=1.4.2
-  - matplotlib>=3.5.1
-  - seaborn>=0.11.2
-### Experiments 
-Reproduce experiments on benchmark datasets:
-```bash
-$ python main.py -h
-```
-For example to train the TabSRALinear on the first fold of the Churn Modeling datase:
-```bash
-$ python main.py --dataset Churn --fold 0 --mode train --lr 0.006835471440855879 --dropout_rate 0.2 --epochs 900 --batch_size 512 --eval_metric AUCROC --seed 42 --weight_decay 0.00038918784304332334 --device cuda:0 --verbose 0
-```
-This command line will:
-  - print the training and validation AUCROC
-  - save the trained model at TabSRA/Churn_0.pth
-
-### Details on parameters and training 
+We use the [skorch](https://skorch.readthedocs.io/en/stable/) framework to make our implementation more scikit-learn friendly.
+[Here](https://github.com/anselmeamekoe/TabSRA/tree/main/ESANN_XKDD) is the old version.
 
 ```python
 import torch
 import torch.nn as nn
-from SRAModels import TabSRALinear
-from DataProcessing import load_benchmark
-from utils import TrainModel,reset_seed_,Predict, load, save,LinearScaling
+from skorch.callbacks import EarlyStopping,LRScheduler,Checkpoint, TrainEndCheckpoint, EpochScoring, InputShapeSetterTabSRA
+from skorch.dataset import Dataset
+from sramodels.SRAModels import TabSRALinearClassifier
+from sklearn.metrics import roc_auc_score
 
-reset_seed_(42)
-Model = TabSRALinear(dim_input,
-                     dim_output,
-                     dim_head = 8,
-                     get_attention = True,
-                     dropout_rate = 0.0,
-                     activation = nn.ReLU(),
-                     bias = True,
-                     s =  nn.Identity(),
-                     for_classif=True
-)
-Model = TrainModel(Model, 
-                   train_set,
-                   test_set= None,
-                   save_path= None,
-                   device= 'cpu',
-                   epochs= 150,
-                   batch_size= 256,
-                   lr= 1e-2 ,
-                   eval_every= 5,
-                   weight_decay= 1e-5,
-                   verbose= 1,
-                   load_best_eval= True,
-                   eval_metric= 'AUCROC'
-)
+configs = {
+         "module__n_head":1,
+         "module__dim_head":8,
+         "module__n_hidden_encoder":1,
+         "module__dropout_rate":0.3,
+         "optimizer__lr":0.001,
+         "random_state":42,
+         "criterion": nn.BCEWithLogitsLoss,
+         "max_epochs":100,
+         "batch_size":256,
+         "device":'cpu'
+}
+scoring = EpochScoring(scoring='roc_auc',lower_is_better=False)#the scoring function
+setter = InputShapeSetterTabSRA(regression=False)#used for setting the input and output dimension automatically
+early_stop = EarlyStopping(monitor=scoring.scoring, patience=10,load_best=True,lower_is_better=False, threshold=0.0001,threshold_mode='abs')
+callbacks = [scoring, setter, early_stop, lr_scheduler]
+
+valid_dataset = Dataset(X_val.values.astype(np.float32),Y_val.astype(np.float32))# custom validation dataset
+TabClassifier = TabSRALinearClassifier(**configs,train_split = predefined_split(valid_dataset),callbacks = callbacks)
+_ = TabClassifier.fit(X_train_.values.astype(np.float32),Y_train_.astype(np.float32))
+
+# prediction
+Y_val_pred = TabClassifier.predict_proba(X_val.values.astype(np.float32))
+best_aucroc = roc_auc_score(Y_val.astype(np.float32), Y_val_pred[:,1])
+
+# feature attribution
+attributions_val = TabClassifier.get_feature_attribution(X_val.values.astype(np.float32))
+
+# attention weights
+attentions_val = TabClassifier.get_attention(X_val.values.astype(np.float32))
+
 ```
-Model parameters
- - ```dim_input```: int
-   
-   The input dimension or the number of features
- - ```dim_output```: int
-   
-   The output dimension. 1 for binary classification and regression problem
- - ```dim_head```: int (default=8)
-
-   The attention head dimension , d_k in the paper.
- - ```get_attention```: bool (default=True)
-
-   Whether to give attention weights or not
- - ```dropout_rate```: float (default=0.0) 
-
+Key parameters
+the model parameters are preceded by ```module```.
+ - ```module_n_head```: int (default=2)
+   Number of SRA head/ensemble. Bigger values gives capacity to the model to produce less stable/robust explanations.
+   Typical values are 1 or 2
+ - ```module__dim_head```: int (default=8)
+   The attention head dimension , $d_k$ in the paper.
+   Typical values are {4,8,12}
+  - ```module__n_hidden_encoder```: int (default=1)
+   The number of hidden layers in  in the Key/Query encoder
+   Typical values are {1,2}
+ - ```module__dropout_rate```: float (default=0.0) 
    The neuron dropout rate used  in the Key/Query encorder during the training.
- - ```activation```: (default=nn.ReLU()) ,
-   
-   The activation  function used in the Key/Query encorder. Any 1-Lipschitz activation is accepted (ex. ReLu, Sigmoid)
- - ```bias```: bool (default=True)
+ - ```module__classifier_bias```: bool (default=True)
+   Whether to use bias term in the downstream linear classifier
+ - ```optimizer```: (default=torch.optim.Adam)
+ - ```optimizer__lr```: float (default=0.05)
+   learning rate used for the training
+ - ```max_epochs```: int (default=100)
+   Maximal number of training iterations
+ - ```batch_size```: int (default=256)
 
-  Whether to use bias term in linear transformations
- - ```s```: bool (default=nn.Identity())
-  
-  The scaling for the attention weights ```s = LinearScaling(scale = dim_head**-0.5)``` result in scale free attention weights in [0,1] used in the paper.
- - ```for_classif```: bool (default=True)
-
- If it is binary classification model ```for_classif=True``` and ```for_classif=False``` for regression problems.
-### Useful links
-  - [Churn modeling classification example](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/BankChurn_Classification_Example.ipynb)
-  - [Regression example](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/Synthetic3_Regression_Example.ipynb)
-  - [2D visualization example](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/2D_Visualization_Reinforced_Vectors.ipynb)
-  - [Stability study example](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/HelocFico_Classification_Example_LipschitzEstimate.ipynb)
 ### Todo 
 TabSRA package with sklearn interface
+
 ### Acknowledgments
 This work has been done in collaboration between BPCE Group, Laboratoire d'Informatique de Paris Nord (LIPN UMR 7030),  DAVID Lab UVSQ-Université Paris Saclay and was supported by the program Convention
 Industrielle de Formation par la Recherche (CIFRE) of the Association Nationale de la Recherche et de la Technologie (ANRT).
