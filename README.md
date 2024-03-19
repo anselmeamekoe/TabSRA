@@ -66,8 +66,11 @@ Create a new python environment, install the [requirements](https://github.com/a
 NB: To use the notebook, you will need to install it in the python environment you have created using pip for example
 
 ### Replicating the results on the robustness of explanations 
-1. Use the the [Notebook](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/Robustness_Study_CreditCardFraud.ipynb) for the example on the Credit Card Fraud dataset
-2. Use the the [Notebook](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/Robustness_Study_HelocFico.ipynb) for the example on the Heloc Fico dataset
+1. Use the [Notebook](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/Robustness_Study_CreditCardFraud.ipynb) for the example on the Credit Card Fraud dataset
+2. Use the [Notebook](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/Robustness_Study_HelocFico.ipynb) for the example on the Heloc Fico dataset
+
+### Replicating the results on the study of the faithfulness of explanations
+
 
 
 ```bash
