@@ -87,6 +87,7 @@ import torch
 import torch.nn as nn
 from skorch.callbacks import EarlyStopping,LRScheduler,Checkpoint, TrainEndCheckpoint, EpochScoring, InputShapeSetterTabSRA
 from skorch.dataset import Dataset
+from skorch.helper import predefined_split
 from sramodels.SRAModels import TabSRALinearClassifier
 from sklearn.metrics import roc_auc_score
 
@@ -126,22 +127,30 @@ Key parameters
 the model parameters are preceded by ```module```.
  - ```module_n_head```: int (default=2)
    Number of SRA head/ensemble. Bigger values gives capacity to the model to produce less stable/robust explanations.
-   Typical values are 1 or 2
+   Typical values are 1 or 2.
+  
  - ```module__dim_head```: int (default=8)
    The attention head dimension , $d_k$ in the paper.
-   Typical values are {4,8,12}
+   Typical values are {4,8,12}.
+   
   - ```module__n_hidden_encoder```: int (default=1)
-   The number of hidden layers in  in the Key/Query encoder
-   Typical values are {1,2}
+   The number of hidden layers in  in the Key/Query encoder.
+   Typical values are {1,2}.
+
  - ```module__dropout_rate```: float (default=0.0) 
    The neuron dropout rate used  in the Key/Query encorder during the training.
+   
  - ```module__classifier_bias```: bool (default=True)
-   Whether to use bias term in the downstream linear classifier
+   Whether to use bias term in the downstream linear classifier.
+   
  - ```optimizer```: (default=torch.optim.Adam)
+   
  - ```optimizer__lr```: float (default=0.05)
-   learning rate used for the training
+   learning rate used for the training.
+   
  - ```max_epochs```: int (default=100)
-   Maximal number of training iterations
+   Maximal number of training iterations.
+  
  - ```batch_size```: int (default=256)
 
 ### Todo 
