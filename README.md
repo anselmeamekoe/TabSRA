@@ -70,8 +70,16 @@ NB: To use the notebook, you will need to install it in the python environment y
 2. Use the [Notebook](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/Robustness_Study_HelocFico.ipynb) for the example on the Heloc Fico dataset
 
 ### Replicating the results on the study of the faithfulness of explanations
+1. [Linear functions](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/Synthetic1_Regression_Example.ipynb)
+2. [Parabolic functions](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/Synthetic2_Regression_Example.ipynb) 
+3. [Linear functions with interactions](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/Synthetic3_Regression_Example.ipynb) 
 
-
+### Real-world examples of TabSRALinear's unique capabilities
+1. [Churn modeling with bias correction](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/Application1_BankChurnModeling.ipynb)
+2. [Credit Default modeling with a group of correlated features](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/Application2_TaiwanCreditDefault.ipynb)
+   
+### Usage of TabSRALinear
+We use the [skorch](https://skorch.readthedocs.io/en/stable/) framework to make our implementation more scikit-learn friendly
 
 ```bash
 $ https://github.com/anselmeamekoe/TabSRA
