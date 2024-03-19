@@ -64,9 +64,10 @@ Create a new python environment, install the [requirements](https://github.com/a
 4.  Run the [Notebook](https://github.com/anselmeamekoe/TabSRA/blob/main/tabular-benchmark/analyses/results.ipynb) for reproducing results
    
 NB: To use the notebook, you will need to install it in the python environment you have created using pip for example:
-```bash
-$ pip install jupyter
-```
+
+### Replicating the results on the robustness of explanations 
+1. Use the the Notebook for the example on the Credit Card Fraud dataset
+2. Use the the Notebook for the example on the Heloc Fico dataset
 
 ```bash
 $ https://github.com/anselmeamekoe/TabSRA
