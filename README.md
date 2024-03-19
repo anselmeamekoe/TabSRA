@@ -49,7 +49,10 @@ Among full-complexty models, we considered:
 
 ### What about the robustness of explanations, are the produced feature attributions similar for similar inputs?
 <img src="https://github.com/anselmeamekoe/TabSRA/blob/main/ressources/Stability_CardFraud_Split0_hideen1_1E_3.png" width=600px>
-Changes in feature attributions (the lower the better) using the [CreditCardFraud](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) dataset. LR = Logistic Regression, SRA=TabSRALinear, XGB_SHAP=XGBoost+TreeSHAP
+
+Changes in feature attributions (the lower the better) using the [CreditCardFraud](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) dataset. 
+
+LR = Logistic Regression, SRA=TabSRALinear, XGB_SHAP=XGBoost+TreeSHAP
 
 
 ## Usage
@@ -78,6 +81,8 @@ NB: To use the notebook, you will need to install it in the python environment y
 1. [Churn modeling with bias correction](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/Application1_BankChurnModeling.ipynb)
 2. [Credit Default modeling with a group of correlated features](https://github.com/anselmeamekoe/TabSRA/blob/main/notebooks/Application2_TaiwanCreditDefault.ipynb)
    
+### Benchmarking your own or another  algorithm
+Please follow the instructions [here](https://github.com/LeoGrin/tabular-benchmark/tree/main) to benchmark a new model depending on your budget.
 ### Usage of TabSRALinear
 We use the [skorch](https://skorch.readthedocs.io/en/stable/) framework to make our implementation more scikit-learn friendly.
 [Here](https://github.com/anselmeamekoe/TabSRA/tree/main/ESANN_XKDD) is the old version.
