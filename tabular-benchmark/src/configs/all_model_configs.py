@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestClassifier, RandomForestRegressor, \
 from xgboost import XGBClassifier, XGBRegressor
 from interpret.glassbox import ExplainableBoostingClassifier, ExplainableBoostingRegressor
 from  igann import IGANN
-
+from catboost import CatBoostClassifier, CatBoostRegressor
 from models.skorch_models import create_resnet_skorch, create_ft_transformer_skorch, create_rtdl_mlp_skorch, create_tabsra_skorch, create_linear_skorch
 from models.skorch_models_regression import create_resnet_regressor_skorch, create_ft_transformer_regressor_skorch, create_rtdl_mlp_regressor_skorch, \
     create_tabsra_regressor_skorch, create_linear_regressor_skorch
@@ -18,6 +18,18 @@ from models.TabSurvey.models.saint import SAINT
 
 total_config = {}
 model_keyword_dic = {}
+
+#### ADD CatBoost ### 
+from configs.model_configs.catboost_config import config_classif, config_regression, config_classif_default, config_regression_default
+keyword = "catboost"
+total_config[keyword] = {
+        "classif": {"random": config_classif,
+                    "default": config_classif_default},
+        "regression": {"random": config_regression,
+                            "default": config_regression_default},
+}
+model_keyword_dic[config_regression["model_name"]["value"]] = CatBoostRegressor 
+model_keyword_dic[config_classif["model_name"]["value"]] = CatBoostClassifier
 
 #### ADD IGANN ### 
 from configs.model_configs.igann_config import config_classif, config_regression, config_classif_default, config_regression_default
