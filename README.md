@@ -63,7 +63,7 @@ Create a new python environment, install the [requirements](https://github.com/a
 1. Clone this repository of your machine
 2. Dowanload the random search results using the links:
    - [full-complexity models](https://figshare.com/ndownloader/files/40081681)
-   - [inherently interpretable models](https://drive.google.com/file/d/1sNmzjmzQg4ym7g62ZOi699QjVqE20W6H/view?usp=sharing)
+   - [inherently interpretable models and CatBoost](https://drive.google.com/file/d/1roIloMQIcEVCPpHieesqGwlH9udGh-4A/view?usp=sharing)
 3.  Copy and paste the downloaded files to ```TabSRA/tabular-benchmark/analyses/```
 4.  Run the [Notebook](https://github.com/anselmeamekoe/TabSRA/blob/main/tabular-benchmark/analyses/results.ipynb) for reproducing results
    
