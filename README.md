@@ -15,18 +15,19 @@ human knowledge during the training phase.
 ## What is the actual performance gap between the full-complexity state-of-the-art models and their inherently interpretable counterpartsin terms of accuracy?
 | Model            | Rank (min)|   Rank (max)      |   Rank (mean)    | Rank (median)|Test score (mean)|Test score (median)|Test score (std)|Runing Time (mean)|Runing Time (meadian)|
 |------------------|-----|-----|--------|--------|-------|--------|-------|---------|----------|
-| DT               | 2   | 11  | 9.480  | 10     | 0.870 | 0.916  | 0.163 | 0.294   | 0.032  |
-| EBM              | 1   | 9   | 4.578  | 4      | 0.961 | 0.985  | 0.067 | 97.837  | 19.737|
-| EBM_S            | 1   | 10  | 6.751  | 7      | 0.933 | 0.958  | 0.086 | 23.997  | 5.144 |
-| LR               | 6   | 11  | 10.703 | 11     | 0.761 | 0.840  | 0.232 | 21.124  | 19.716 |
-| TabSRALinear     | 1   | 11  | 7.289  | 8      | 0.903 | 0.973  | 0.197 | 47.576  |  38.073|
+|DT | 2 | 12 | 10.476 | 11|                      0.868 |  0.907 | 0.163 |     0.294 |   0.032 |
+| EBM\_S | 1 | 11 |  7.692 |  8 |                      0.931 |  0.955 | 0.087 |    23.997 |   5.144 |
+| EBM | 1 | 10 | 5.477 |  5 |                      0.959 |  0.982 | 0.067 |    97.837 |  19.737 |
+| LR | 7 | 12 | 11.701 | 12 |                      0.760 |  0.839 | 0.232 |    21.124 |  19.716 |
+|TabSRALinear | 1 | 12 |  8.225 |  9 |                      0.901 |  0.971 | 0.197 |   47.576 |  38.073 |
 |                  |                                                                                 |
-| MLP              | 1   | 11  | 6.119  | 7      | 0.926 | 0.978  | 0.159 | 24.165  | 19.256 |
-| ResNet           | 1   | 11  | 6.251  | 7      | 0.911 | 0.976  | 0.195 | 95.123  | 53.212 |
-| SAINT            | 1   | 11  | 4.776  | 5      | 0.949 | 0.985  | 0.093 | 216.053 | 126.841 |
-| FT Transformer   | 1   | 10  | 4.382  | 4      | 0.946 | 0.988  | 0.109 | 126.589 | 77.465  |
-| Random Forest     | 1   | 9   | 3.501  | 3      | 0.987 | 0.994  | 0.019 | 39.030  | 8.252   |
-| XGBoost          | 1   | 10  | 2.171  | 1      | 0.990 | 1.000  | 0.028 | 18.254  | 12.561  |
+| MLP | 1 | 12 |  6.992 |  8 |                      0.924 |  0.973 | 0.159 |    24.165 |  19.256 |
+| ResNet | 1 | 12 |  7.120 |  8 |                     0.909 |  0.975 | 0.195 |    95.123 |  53.212 |
+|SAINT | 1 | 12 |  5.625 |  6 |                      0.946 |  0.982 | 0.093 |   216.053 | 126.841 |
+| FT-Transformer | 1 | 11 |  5.203 | 5 |                      0.944 |  0.984 | 0.109 |   126.589 |  77.465 |
+  Random Forest | 1 | 10 |  4.214 |  4 |                      0.985 |  0.992 | 0.021 |   39.030 |  8.252 |
+| XGBoost | 1 | 11 |  2.728 | 2 |                      0.988 |  0.998 | 0.029 |    18.254 |  12.561 |
+| CatBoost |1 | 10 |  2.545 |  2 |                      0.991 |  0.999 | 0.021 |    12.176 |   4.025 |
 
 
 Predictive performance of models across a benchmark of 45 datasets (59 tasks) introduced in the paper "Why do tree-based models still outperform deep learning on typical tabular data?". We report the rank over all tasks, the relative test score (Accuracy/ $R^2$ ) and running time (training+inference) in seconds.
