@@ -12,7 +12,7 @@ solutions and explaining full-complexity models.
 This study includes, *TabSRAs*, an attention based inherently interpretable model which is proving to be a viable option for (i) generating stable or robust explanations, and (ii) incorporating
 human knowledge during the training phase.
 
-## What is the actual performance gap between the full-complexity state-of-the-art models and their inherently interpretable counterpartsin terms of accuracy?
+## What is the actual performance gap between the full-complexity state-of-the-art models and their inherently interpretable counterparts in terms of accuracy?
 | Model            | Rank (min)|   Rank (max)      |   Rank (mean)    | Rank (median)|Test score (mean)|Test score (median)|Test score (std)|Runing Time (mean)|Runing Time (meadian)|
 |------------------|-----|-----|--------|--------|-------|--------|-------|---------|----------|
 |DT | 2 | 12 | 10.476 | 11|                      0.868 |  0.907 | 0.163 |     0.294 |   0.032 |
@@ -167,6 +167,16 @@ This work has been done in collaboration between BPCE Group, Laboratoire d'Infor
 Industrielle de Formation par la Recherche (CIFRE) of the Association Nationale de la Recherche et de la Technologie (ANRT).
 ### Citations
   If you find the code useful, please cite it by using the following BibTeX entry:
+  ```
+@article{amekoe2024exploring,
+  title={Exploring accuracy and interpretability trade-off in tabular learning with novel attention-based models},
+  author={Amekoe, Kodjo Mawuena and Azzag, Hanane and Dagdia, Zaineb Chelly and Lebbah, Mustapha and Jaffre, Gregoire},
+  journal={Neural Computing and Applications},
+  pages={1--29},
+  year={2024},
+  publisher={Springer}
+}
+  ```  
   ```
 @inproceedings{kodjoEs23,
  author       = {Kodjo Mawuena Amekoe and
